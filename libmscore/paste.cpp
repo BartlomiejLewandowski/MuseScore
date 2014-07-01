@@ -293,7 +293,7 @@ void Score::pasteStaff(XmlReader& e, Segment* dst, int staffIdx)
       updateNotes();
 
       if (pasted) {                       //select only if we pasted something
-            Segment* s1 = tick2segment(dstTick);
+            Segment* s1 = tick2segment(dstTick,false,Segment::Type::ChordRest);
             Segment* s2 = tick2segment(dstTick + tickLen);
             int endStaff = dstStaffStart + staves;
             if (endStaff > nstaves())
